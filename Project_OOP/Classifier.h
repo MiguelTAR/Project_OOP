@@ -1,6 +1,4 @@
 #pragma once
-
-
 #include "data.h"
 
 // Abstract base class for classifiers
