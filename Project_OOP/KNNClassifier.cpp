@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int KNNClassifier::classify(const Data& data) const
+int KNNClassifier::classify(const Data&) const
 {
     cout << "\nKNNClassifier::classify()" << endl;
 	cout << "\nKNNClassifier has not been implemented yet." << endl;

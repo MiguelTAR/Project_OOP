@@ -35,7 +35,11 @@ int main()
     cout << "2. Another Classifier" << endl;
     cout << "3. KNN Classifier" << endl;
     cout << "Choose a classifier: ";
-    cin >> classifierChoice;
+    if (!(cin >> classifierChoice))
+    {
+        cout << "Invalid classifier choice." << endl;
+        return 1;
+    }
 
     if (classifierChoice == 1)
     {
@@ -53,7 +57,11 @@ int main()
         cout << "\n1. Enter x, y and z" << endl;
         cout << "2. Enter a data filename" << endl;
         cout << "Choose an option: ";
-        cin >> inputChoice;
+        if (!(cin >> inputChoice))
+        {
+            cout << "Invalid option." << endl;
+            return 1;
+        }
 
         if (inputChoice == 1)
         {
@@ -62,7 +70,11 @@ int main()
             double z;
 
             cout << "\nEnter x y z:\n";
-            cin >> x >> y >> z;
+            if (!(cin >> x >> y >> z))
+            {
+                cout << "Invalid input. Please enter three numbers." << endl;
+                return 1;
+            }
 
             Data sample(x, y, z);
 
@@ -77,7 +89,11 @@ int main()
             string filename;
 
             cout << "\nEnter filename: ";
-            cin >> filename;
+            if (!(cin >> filename))
+            {
+                cout << "Invalid filename." << endl;
+                return 1;
+            }
 
             vector<Data> unknownData = readUnknownData(filename);
 

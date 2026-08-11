@@ -8,7 +8,7 @@
 
 using namespace std;
 
-int AnotherClassifier::classify(const Data& data) const
+int AnotherClassifier::classify(const Data&) const
 {
     cout << "\nAnotherClassifier::classify()" << endl;
 	cout << "\nAnotherClassifier has not been implemented yet." << endl;
