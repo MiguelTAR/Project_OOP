@@ -1,5 +1,8 @@
-//Data class implementation
-//Miguel
+//--------------------------------------------------------------------------
+//				data.cpp - Implementation of the Data class
+//						Author: Miguel Tarazona
+//--------------------------------------------------------------------------
+
 #include "data.h"
 
 // Constructor that initializes the data point with default values

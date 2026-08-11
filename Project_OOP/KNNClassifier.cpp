@@ -1,3 +1,8 @@
+//--------------------------------------------------------------------------
+//			KNNClassifier.cpp - Implementation of the KNNClassifier class
+//						    Author: Zuwair Khilji
+//--------------------------------------------------------------------------
+
 #include "KNNClassifier.h"
 #include <iostream>
 

@@ -1,3 +1,8 @@
+//--------------------------------------------------------------------------
+//	AnotherClassifier.cpp - Implementation of the AnotherClassifier class
+//			                Author: Zuwair Khilji
+//--------------------------------------------------------------------------
+
 #include "AnotherClassifier.h"
 #include <iostream>
 

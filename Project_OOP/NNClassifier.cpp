@@ -1,11 +1,12 @@
+//--------------------------------------------------------------------------
+//			NNClassifier.cpp - Implementation of the NNClassifier class
+//						Author: Miguel Tarazona
+//--------------------------------------------------------------------------
+
 #include "NNClassifier.h"
 #include <cmath>
 
-NNClassifier::NNClassifier() 
-{
-	// Default constructor
-}
-
+using namespace std;
 
 NNClassifier::NNClassifier(const vector<Data>& trainingData) 
 {

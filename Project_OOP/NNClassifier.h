@@ -1,9 +1,7 @@
 #pragma once
 
 #include "Classifier.h"
-#include "data.h"
 #include <vector>
-
 
 using namespace std;
 
@@ -14,8 +12,6 @@ private:
 	vector<Data> trainingData; 
 
 public:
-	// Default constructor
-	NNClassifier();
 	NNClassifier(const vector<Data>& trainingData);	// loads training data into the classifier
 	int classify(const Data& data) const override;	//nearest neighbor classification method
 };

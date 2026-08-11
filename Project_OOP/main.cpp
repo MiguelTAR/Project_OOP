@@ -1,3 +1,8 @@
+//--------------------------------------------------------------------------
+//  main.cpp - Entry point for the Phone Orientation Classifier program
+//                      Author: Ivan Immanuel Shaji
+//--------------------------------------------------------------------------
+
 #include <iostream>
 #include <string>
 #include <vector>
@@ -75,6 +80,12 @@ int main()
             cin >> filename;
 
             vector<Data> unknownData = readUnknownData(filename);
+
+            if (unknownData.empty())
+            {
+                cout << "No unknown data was loaded." << endl;
+                return 1;
+            }
 
             if (classifyFile(unknownData, nnClassifier, "result.txt"))
             {

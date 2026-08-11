@@ -1,5 +1,11 @@
+//--------------------------------------------------------------------------
+//			functions.cpp - Implementation of the utility functions
+//						Author: Ivan Immanuel Shaji
+//--------------------------------------------------------------------------
+
 #include <iomanip>
 #include <iostream>
+#include <fstream>
 #include "functions.h"
 
 using namespace std;
