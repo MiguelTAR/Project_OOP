@@ -1,3 +1,5 @@
+// Nearest neighbor classification method
+// Miguel
 #include "NNClassifier.h"
 #include <cmath>
 
@@ -25,6 +27,8 @@ int NNClassifier::classify(const Data& data) {
 			pow(item.y - data.y, 2) +
 			pow(item.z - data.z, 2)
 		);
+
+		// Update the nearest label if a closer neighbor is found
 		if (distance < mini_distance) {
 			mini_distance = distance;
 			nearest_label = item.label;
