@@ -30,7 +30,7 @@ vector<Data> readLabeledData(const std::string& filename)
 			cout << "Error reading line: " << x << comma1 << y << comma2 << z << comma3 << label << endl;
 			continue;						// Skip this line and continue with the next
 		}
-		data.push_back(x, y, z, label);
+		data.push_back(Data(x, y, z, label));
 	}
 	return data;
 }
@@ -60,7 +60,7 @@ vector<Data> readUnknownData(const std::string& filename)
 			cout << "Error reading line: " << x << comma1 << y << comma2 << z << endl;
 			continue;						// Skip this line and continue with the next
 		}
-		data.push_back(x, y, z);
+		data.push_back(Data(x, y, z));
 	}
 	return data;
 }

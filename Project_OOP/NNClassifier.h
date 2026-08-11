@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Classifier.h"
-#include "Data.h"
+#include "data.h"
 #include <vector>
 
 
