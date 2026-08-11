@@ -1,3 +1,8 @@
+//--------------------------------------------------------------------------
+//			NNClassifier.h - Declaration of the NNClassifier class
+//						Author: Miguel Tarazona
+//--------------------------------------------------------------------------
+
 #pragma once
 
 #include "Classifier.h"
@@ -5,14 +10,16 @@
 
 using namespace std;
 
+// NNClassifier class implements the nearest neighbor classification algorithm
 class NNClassifier : public Classifier
 {
+// Private member variable to store the training data
 private:
-	// Store the training data
 	vector<Data> trainingData; 
 
+// Private member function to calculate the Euclidean distance between two Data points
 public:
-	NNClassifier(const vector<Data>& trainingData);	// loads training data into the classifier
-	int classify(const Data& data) const override;	//nearest neighbor classification method
+	NNClassifier(const vector<Data>& trainingData);
+	int classify(const Data& data) const override;
 };
 

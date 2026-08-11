@@ -10,68 +10,71 @@
 
 using namespace std;
 
-vector<Data> readLabeledData(const std::string& filename)
+// Function to read labeled data from a CSV file and return a vector of Data objects
+vector<Data> readLabeledData(const string& filename)
 {
-	vector<Data> data;
-	ifstream file(filename);
+	vector<Data> data;														// Vector to store the loaded data
+	ifstream file(filename);												// Opens the file for reading
 
-	if (!file.is_open())
+	if (!file.is_open())													// Checks if the file was opened successfully
 	{
 		cout << "Error opening file: " << filename << endl;
 		return data;
 	}
 
-	double x;
+	double x;																// Variables to store the x, y, z coordinates and label read from the file
 	double y;
 	double z;
 	int label;
 
-	char comma1; // To read the first comma in the CSV file
-	char comma2; // To read the second comma in the CSV file
-	char comma3; // To read the third comma in the CSV file
+	char comma1;															// Variables to read the commas in the CSV file
+	char comma2;
+	char comma3;
 
-	while (file >> x >> comma1 >> y >> comma2 >> z >> comma3 >> label)
+	while (file >> x >> comma1 >> y >> comma2 >> z >> comma3 >> label)		// Reads a line from the file and extracts the values
 	{
-		if (comma1 != ',' || comma2 != ',' || comma3 != ',')
+		if (comma1 != ',' || comma2 != ',' || comma3 != ',')				// Checks if the commas are in the expected positions
 		{
 			cout << "Error reading line: " << x << comma1 << y << comma2 << z << comma3 << label << endl;
-			continue;						// Skip this line and continue with the next
+			continue;														// Skips this line and continues with the next
 		}
-		data.push_back(Data(x, y, z, label));
+		data.push_back(Data(x, y, z, label));								// Adds the read data to the vector
 	}
-	return data;
+	return data;															// Returns the vector of Data objects
 }
 
-vector<Data> readUnknownData(const std::string& filename)
+// Function to read unknown data from a CSV file and return a vector of Data objects
+vector<Data> readUnknownData(const string& filename)
 {
-	vector<Data> data;
-	ifstream file(filename);
+	vector<Data> data;														// Vector to store the loaded data
+	ifstream file(filename);												// Opens the file for reading
 
-	if (!file.is_open())
+	if (!file.is_open())													// Checks if the file was opened successfully
 	{
 		cout << "Error opening file: " << filename << endl;
 		return data;
 	}
 
-	double x;
+	double x;																// Variables to store the x, y, z coordinates read from the file
 	double y;
 	double z;
 
-	char comma1; // To read the first comma in the CSV file
-	char comma2; // To read the second comma in the CSV file
+	char comma1;															// Variables to read the commas in the CSV file
+	char comma2;
 
-	while (file >> x >> comma1 >> y >> comma2 >> z)
+	while (file >> x >> comma1 >> y >> comma2 >> z)							// Reads a line from the file and extracts the values
 	{
-		if (comma1 != ',' || comma2 != ',')
+		if (comma1 != ',' || comma2 != ',')									// Checks if the commas are in the expected positions
 		{
 			cout << "Error reading line: " << x << comma1 << y << comma2 << z << endl;
-			continue;						// Skip this line and continue with the next
+			continue;														// Skips this line and continues with the next
 		}
 		data.push_back(Data(x, y, z));
 	}
-	return data;
+	return data;															// Returns the vector of Data objects
 }
 
+// Function to get the orientation string corresponding to a label
 string getOrientation(int label)
 {
 	switch (label)
@@ -93,46 +96,48 @@ string getOrientation(int label)
 	}
 }
 
-bool classifyFile(const std::vector<Data>& data, const Classifier& classifier, const std::string& outputFilename)
+// Function to classify a vector of Data objects using a given classifier and save the results to a CSV file
+bool classifyFile(const vector<Data>& data, const Classifier& classifier, const string& outputFilename)
 {
-	ofstream outputFile(outputFilename);
+	ofstream outputFile(outputFilename);									// Opens the output file for writing
 
-	if (!outputFile)
+	if (!outputFile)														// Checks if the file was opened successfully
 	{
 		cout << "Could not create "<< outputFilename << endl;
 		return false;
 	}
 
-	outputFile << setprecision(8);
+	outputFile << setprecision(8);											// Sets the precision for floating-point output
 
-	for (const Data& item : data)
+	for (const Data& item : data)											// Iterates through each Data object in the input vector
 	{
-		int label = classifier.classify(item);
+		int label = classifier.classify(item);								// Classifies the Data object using the provided classifier
 
-		outputFile << item.getX() << ',' << item.getY() << ',' << item.getZ() << ',' << label << ',' << getOrientation(label) << '\n';
+		outputFile << item.getX() << ',' << item.getY() << ',' << item.getZ() << ',' << label << ',' << getOrientation(label) << '\n';	// Writes the x, y, z coordinates, label, and orientation to the output file
 	}
 
-	return true;
+	return true;															// Returns true to indicate successful classification and file writing
 }
 
+// Function to test the accuracy of a classifier on a set of testing data
 double testClassifier(const vector<Data>& testingData, const Classifier& classifier)
 {
-	if (testingData.empty())
+	if (testingData.empty())												// Checks if the testing data is empty
 	{
 		return 0;
 	}
 
-	int correctPredictions = 0;
+	int correctPredictions = 0;												// Counter for correct predictions
 
-	for (const Data& item : testingData)
+	for (const Data& item : testingData)									// Iterates through each Data object in the testing data
 	{
-		int predictedLabel = classifier.classify(item);
+		int predictedLabel = classifier.classify(item);						// Classifies the Data object using the provided classifier
 
-		if (predictedLabel == item.getLabel())
+		if (predictedLabel == item.getLabel())								// Checks if the predicted label matches the actual label
 		{
-			correctPredictions++;
+			correctPredictions++;											// Increments the counter for correct predictions
 		}
 	}
 
-	return 100.0 * correctPredictions / testingData.size();
+	return 100.0 * correctPredictions / testingData.size();					// Returns the accuracy as a percentage of correct predictions
 }
