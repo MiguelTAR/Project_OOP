@@ -28,6 +28,17 @@ int NNClassifier::classify(const Data& data) const
 		{
 			min_distance = distance;
 			nearest_label = item.getLabel();
+	for (auto item : trainingData) {
+		double distance = sqrt(
+			pow(item.x - data.x, 2) +
+			pow(item.y - data.y, 2) +
+			pow(item.z - data.z, 2)
+		);
+
+		// Update the nearest label if a closer neighbor is found
+		if (distance < mini_distance) {
+			mini_distance = distance;
+			nearest_label = item.label;
 		}
 	}
 	return nearest_label;									// Returns the label of the nearest neighbor
