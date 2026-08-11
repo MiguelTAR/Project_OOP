@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['project_5foop_0',['Project_OOP',['../md__r_e_a_d_m_e.html',1,'']]]
+  ['anotherclassifier_0',['AnotherClassifier',['../class_another_classifier.html',1,'']]],
+  ['anotherclassifier_2ecpp_1',['AnotherClassifier.cpp',['../_another_classifier_8cpp.html',1,'']]],
+  ['anotherclassifier_2eh_2',['AnotherClassifier.h',['../_another_classifier_8h.html',1,'']]]
 ];
