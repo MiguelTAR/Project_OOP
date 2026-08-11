@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// Function to classify a new data point using another classification algorithm
+// Placeholder implementation of the classify function for AnotherClassifier
 int AnotherClassifier::classify(const Data&) const
 {
     cout << "\nAnotherClassifier::classify()" << endl;

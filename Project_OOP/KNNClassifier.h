@@ -6,7 +6,7 @@
 #pragma once
 #include "Classifier.h"
 
-// KNNClassifier class implements the K-Nearest Neighbors classification algorithm
+// KNNClassifier class implements the placeholder for the K-Nearest Neighbors classification algorithm
 class KNNClassifier : public Classifier
 {
 public:

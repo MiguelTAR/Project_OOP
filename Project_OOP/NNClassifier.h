@@ -17,7 +17,7 @@ class NNClassifier : public Classifier
 private:
 	vector<Data> trainingData; 
 
-// Private member function to calculate the Euclidean distance between two Data points
+// Public member functions to initialize the classifier and classify new data points
 public:
 	NNClassifier(const vector<Data>& trainingData);
 	int classify(const Data& data) const override;

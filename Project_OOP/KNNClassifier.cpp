@@ -8,7 +8,7 @@
 
 using namespace std;
 
-// Function to classify a new data point using the KNN algorithm
+// Placeholder implementation of the classify function for KNNClassifier
 int KNNClassifier::classify(const Data&) const
 {
     cout << "\nKNNClassifier::classify()" << endl;

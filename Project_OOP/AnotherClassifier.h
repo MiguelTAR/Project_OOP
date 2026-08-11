@@ -6,7 +6,7 @@
 #pragma once
 #include "Classifier.h"
 
-// AnotherClassifier class implements another classification algorithm
+// AnotherClassifier class implements the placeholder for another classification algorithm
 class AnotherClassifier : public Classifier
 {
 public:
