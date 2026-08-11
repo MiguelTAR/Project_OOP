@@ -1,4 +1,3 @@
-#include <iomanip>
 #include <iostream>
 #include <string>
 #include <vector>
@@ -41,8 +40,7 @@ int main()
         {
             double accuracy = testClassifier(testingData, nnClassifier);
 
-            cout << fixed << setprecision(2);
-            cout << "Accuracy: " << accuracy << "%" << std::endl;
+            cout << "\nTesting Accuracy: " << accuracy << "%" << endl;
         }
 
         int inputChoice;
@@ -58,29 +56,29 @@ int main()
             double y;
             double z;
 
-            cout << "Enter x y z: ";
+            cout << "\nEnter x y z:\n";
             cin >> x >> y >> z;
 
             Data sample(x, y, z);
 
             int label = nnClassifier.classify(sample);
 
-            cout << "Label: " << label << endl;
-            cout << "Orientation: " << getOrientation(label) << std::endl;
+            cout << "\nLabel: " << label << endl;
+            cout << "Orientation: " << getOrientation(label) << endl;
         }
 
         else if (inputChoice == 2)
         {
             string filename;
 
-            cout << "Enter filename: ";
+            cout << "\nEnter filename: ";
             cin >> filename;
 
             vector<Data> unknownData = readUnknownData(filename);
 
             if (classifyFile(unknownData, nnClassifier, "result.txt"))
             {
-                cout << "Results saved to result.txt." << endl;
+                cout << "\nResults saved to result.txt." << endl;
             }
         }
 

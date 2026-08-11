@@ -8,8 +8,9 @@
 #include <fstream>
 
 using namespace std;
-vector<Data> readLabeledData(const std::string& filename);
-vector<Data> readUnknownData(const std::string& filename);
+
+vector<Data> readLabeledData(const string& filename);
+vector<Data> readUnknownData(const string& filename);
 
 string getOrientation(int label);
 

@@ -93,7 +93,7 @@ bool classifyFile(const std::vector<Data>& data, const Classifier& classifier, c
 
 	if (!outputFile)
 	{
-		cout << "Could not create "<< outputFilename << std::endl;
+		cout << "Could not create "<< outputFilename << endl;
 		return false;
 	}
 
@@ -109,7 +109,7 @@ bool classifyFile(const std::vector<Data>& data, const Classifier& classifier, c
 	return true;
 }
 
-double testClassifier(const std::vector<Data>& testingData, const Classifier& classifier)
+double testClassifier(const vector<Data>& testingData, const Classifier& classifier)
 {
 	if (testingData.empty())
 	{
@@ -127,8 +127,6 @@ double testClassifier(const std::vector<Data>& testingData, const Classifier& cl
 			correctPredictions++;
 		}
 	}
-
-	cout << "Correct predictions: " << correctPredictions << " / " << testingData.size() << std::endl;
 
 	return 100.0 * correctPredictions / testingData.size();
 }
