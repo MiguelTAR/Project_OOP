@@ -85,3 +85,49 @@ string getOrientation(int label)
 		return "Unknown";
 	}
 }
+
+bool classifyFile(const std::vector<Data>& data, const Classifier& classifier, const std::string& outputFilename)
+{
+	ofstream outputFile(outputFilename);
+
+	if (!outputFile)
+	{
+		cout << "Could not create "<< outputFilename << std::endl;
+		return false;
+	}
+
+	outputFile << setprecision(8);
+
+	for (const Data& item : data)
+	{
+		int label = classifier.classify(item);
+
+		outputFile << item.getX() << ',' << item.getY() << ',' << item.getZ() << ',' << label << ',' << getOrientation(label) << '\n';
+	}
+
+	return true;
+}
+
+double testClassifier(const std::vector<Data>& testingData, const Classifier& classifier)
+{
+	if (testingData.empty())
+	{
+		return 0;
+	}
+
+	int correctPredictions = 0;
+
+	for (const Data& item : testingData)
+	{
+		int predictedLabel = classifier.classify(item);
+
+		if (predictedLabel == item.getLabel())
+		{
+			correctPredictions++;
+		}
+	}
+
+	cout << "Correct predictions: " << correctPredictions << " / " << testingData.size() << std::endl;
+
+	return 100.0 * correctPredictions / testingData.size();
+}

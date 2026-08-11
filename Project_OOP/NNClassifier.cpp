@@ -21,12 +21,7 @@ int NNClassifier::classify(const Data& data) const
 	// For loop to find the nearest neighbor
 	for (const Data& item : trainingData) 
 	{
-		double distance = sqrt
-		(
-			pow(item.getX() - data.getX(), 2) + 
-			pow(item.getY() - data.getY(), 2) + 
-			pow(item.getZ() - data.getZ(), 2)
-		);
+		double distance = sqrt(pow(item.getX() - data.getX(), 2) + pow(item.getY() - data.getY(), 2) + pow(item.getZ() - data.getZ(), 2));
 		if (distance < min_distance) 
 		{
 			min_distance = distance;
