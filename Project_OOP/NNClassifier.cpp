@@ -9,7 +9,7 @@
 using namespace std;
 
 // Constructor that initializes the classifier with training data
-NNClassifier::NNClassifier(const vector<Data>& trainingData) 
+NNClassifier::NNClassifier(const vector<Data>& trainingData)
 {
 	this->trainingData = trainingData;						// Stores the training data in the classifier
 }
@@ -21,24 +21,14 @@ int NNClassifier::classify(const Data& data) const
 	int nearest_label = -1;									// Initializes to an invalid label
 
 	// For loop to find the nearest neighbor
-	for (const Data& item : trainingData) 
+	for (const Data& item : trainingData)
 	{
 		double distance = sqrt(pow(item.getX() - data.getX(), 2) + pow(item.getY() - data.getY(), 2) + pow(item.getZ() - data.getZ(), 2));	// Calculates the Euclidean distance between the new data point and the training data point
+		
 		if (distance < min_distance)						// If the calculated distance is less than the current minimum distance, update the minimum distance and nearest label
 		{
 			min_distance = distance;
 			nearest_label = item.getLabel();
-	for (auto item : trainingData) {
-		double distance = sqrt(
-			pow(item.x - data.x, 2) +
-			pow(item.y - data.y, 2) +
-			pow(item.z - data.z, 2)
-		);
-
-		// Update the nearest label if a closer neighbor is found
-		if (distance < mini_distance) {
-			mini_distance = distance;
-			nearest_label = item.label;
 		}
 	}
 	return nearest_label;									// Returns the label of the nearest neighbor
