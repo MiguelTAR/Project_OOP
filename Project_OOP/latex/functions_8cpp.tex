@@ -1,0 +1,54 @@
+\doxysection{functions.\+cpp File Reference}
+\hypertarget{functions_8cpp}{}\label{functions_8cpp}\index{functions.cpp@{functions.cpp}}
+{\ttfamily \+\#include $<$iomanip$>$}\newline
+{\ttfamily \+\#include $<$iostream$>$}\newline
+{\ttfamily \+\#include $<$fstream$>$}\newline
+{\ttfamily \+\#include "{}functions.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ \doxymbox{\hyperlink{functions_8cpp_ac5e4489626959589626dc7c99c94c6c3}{read\+Labeled\+Data}} (const std::\+string \&filename)
+\item 
+vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ \doxymbox{\hyperlink{functions_8cpp_a222c36777d720dcdf809eddaa708e68f}{read\+Unknown\+Data}} (const std::\+string \&filename)
+\item 
+string \doxymbox{\hyperlink{functions_8cpp_a2a51e9ea9eb16cd9ce3857dbac6f26dc}{get\+Orientation}} (int label)
+\item 
+bool \doxymbox{\hyperlink{functions_8cpp_a02acdf9044aab57960a453f88076469c}{classify\+File}} (const std::\+vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ \&data, const \doxymbox{\hyperlink{class_classifier}{Classifier}} \&classifier, const std::\+string \&output\+Filename)
+\item 
+double \doxymbox{\hyperlink{functions_8cpp_a40bee0f0cdb55bc030fbe17691f215d1}{test\+Classifier}} (const vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ \&testing\+Data, const \doxymbox{\hyperlink{class_classifier}{Classifier}} \&classifier)
+\end{DoxyCompactItemize}
+
+
+\label{functions_8cpp_doc-func-members}
+\Hypertarget{functions_8cpp_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{functions_8cpp_a02acdf9044aab57960a453f88076469c}\index{functions.cpp@{functions.cpp}!classifyFile@{classifyFile}}
+\index{classifyFile@{classifyFile}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{classifyFile()}{classifyFile()}}
+{\footnotesize\ttfamily \label{functions_8cpp_a02acdf9044aab57960a453f88076469c} 
+bool classify\+File (\begin{DoxyParamCaption}\item[{const std::\+vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ \&}]{data}{, }\item[{const \doxymbox{\hyperlink{class_classifier}{Classifier}} \&}]{classifier}{, }\item[{const std::\+string \&}]{output\+Filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{functions_8cpp_a2a51e9ea9eb16cd9ce3857dbac6f26dc}\index{functions.cpp@{functions.cpp}!getOrientation@{getOrientation}}
+\index{getOrientation@{getOrientation}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{getOrientation()}{getOrientation()}}
+{\footnotesize\ttfamily \label{functions_8cpp_a2a51e9ea9eb16cd9ce3857dbac6f26dc} 
+string get\+Orientation (\begin{DoxyParamCaption}\item[{int}]{label}{}\end{DoxyParamCaption})}
+
+\Hypertarget{functions_8cpp_ac5e4489626959589626dc7c99c94c6c3}\index{functions.cpp@{functions.cpp}!readLabeledData@{readLabeledData}}
+\index{readLabeledData@{readLabeledData}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{readLabeledData()}{readLabeledData()}}
+{\footnotesize\ttfamily \label{functions_8cpp_ac5e4489626959589626dc7c99c94c6c3} 
+vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ read\+Labeled\+Data (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{functions_8cpp_a222c36777d720dcdf809eddaa708e68f}\index{functions.cpp@{functions.cpp}!readUnknownData@{readUnknownData}}
+\index{readUnknownData@{readUnknownData}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{readUnknownData()}{readUnknownData()}}
+{\footnotesize\ttfamily \label{functions_8cpp_a222c36777d720dcdf809eddaa708e68f} 
+vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ read\+Unknown\+Data (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{filename}{}\end{DoxyParamCaption})}
+
+\Hypertarget{functions_8cpp_a40bee0f0cdb55bc030fbe17691f215d1}\index{functions.cpp@{functions.cpp}!testClassifier@{testClassifier}}
+\index{testClassifier@{testClassifier}!functions.cpp@{functions.cpp}}
+\doxysubsubsection{\texorpdfstring{testClassifier()}{testClassifier()}}
+{\footnotesize\ttfamily \label{functions_8cpp_a40bee0f0cdb55bc030fbe17691f215d1} 
+double test\+Classifier (\begin{DoxyParamCaption}\item[{const vector$<$ \doxymbox{\hyperlink{class_data}{Data}} $>$ \&}]{testing\+Data}{, }\item[{const \doxymbox{\hyperlink{class_classifier}{Classifier}} \&}]{classifier}{}\end{DoxyParamCaption})}
+

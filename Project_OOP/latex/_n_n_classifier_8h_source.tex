@@ -1,0 +1,23 @@
+\doxysection{NNClassifier.\+h}
+\hypertarget{_n_n_classifier_8h_source}{}\label{_n_n_classifier_8h_source}\doxymbox{\hyperlink{_n_n_classifier_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_classifier_8h}{Classifier.h}}"{}}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_n_n_classifier_adcfff99214394e7eebb4dc5781c64a19}{NNClassifier}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_classifier}{Classifier}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{comment}{//\ Store\ the\ training\ data}}
+\DoxyCodeLine{00012\ \ \ \ \ vector<Data>\ trainingData;\ }
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \doxymbox{\hyperlink{class_n_n_classifier_adcfff99214394e7eebb4dc5781c64a19}{NNClassifier}}(\textcolor{keyword}{const}\ vector<Data>\&\ trainingData);\ \textcolor{comment}{//\ loads\ training\ data\ into\ the\ classifier}}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{class_n_n_classifier_a8decf5fa5385f24fb7202620ed5d9447}{classify}}(\textcolor{keyword}{const}\ \doxymbox{\hyperlink{class_data}{Data}}\&\ data)\ \textcolor{keyword}{const\ override};\ \ \textcolor{comment}{//nearest\ neighbor\ classification\ method}}
+\DoxyCodeLine{00017\ \};}
+\DoxyCodeLine{00018\ }
+
+\end{DoxyCode}
